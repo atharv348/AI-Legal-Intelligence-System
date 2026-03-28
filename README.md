@@ -40,5 +40,29 @@ The system is built on a modern, high-performance AI and web stack:
 2. Install dependencies: `npm install`.
 3. Run the development server: `npm run dev`.
 
-## License
-This project is licensed under the MIT License.
+## Deployment
+
+### Backend (Render)
+1. Sign up on [Render.com](https://render.com).
+2. Create a new **Web Service**.
+3. Connect this GitHub repository.
+4. Select **Docker** as the Runtime.
+5. Set the **Root Directory** to `backend`.
+6. Add the following **Environment Variables**:
+   - `GROQ_API_KEY`: Your Groq API key.
+   - `SECRET_KEY`: A secure random string for JWT.
+   - `ALGORITHM`: `HS256`.
+   - `ACCESS_TOKEN_EXPIRE_MINUTES`: `60`.
+7. Render will deploy your API at `https://your-app.onrender.com`.
+
+### Frontend (Vercel)
+1. Sign up on [Vercel.com](https://vercel.com).
+2. Create a new **Project** and connect this repository.
+3. Set the **Root Directory** to `frontend`.
+4. Add the following **Environment Variable**:
+   - `NEXT_PUBLIC_API_BASE_URL`: `https://your-app.onrender.com/api/v1` (The URL of your Render backend).
+5. Vercel will deploy your app with a public URL.
+
+## Note on Database
+This demo uses **Excel (`users_db.xlsx`)** for user data. On Render's free tier, the file system is ephemeral, meaning data resets when the service restarts. For production use, consider migrating to **PostgreSQL** or **Supabase**.
+
