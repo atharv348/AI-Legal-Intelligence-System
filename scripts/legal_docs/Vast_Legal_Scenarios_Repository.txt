@@ -1,0 +1,29 @@
+This document contains a vast repository of Indian legal case scenarios across multiple domains to provide the Case Outcome Predictor with comprehensive contextual data.
+
+### **Category 1: Motor Vehicle Accidents & Compensation (MACT)**
+- **Scenario 1 (Minor Injury)**: A motorcyclist was hit by a speeding car at a traffic junction. The victim suffered a fractured leg. FIR was filed under Section 279/337 IPC. The car had valid insurance.
+  - *Outcome*: Compensation usually ranges from ₹50,000 to ₹1,50,000 covering medical expenses and pain/suffering.
+- **Scenario 2 (Fatal Accident)**: A 35-year-old sole breadwinner was killed by a truck. The driver was found to be intoxicated.
+  - *Outcome*: High compensation (₹20L - ₹50L+) based on the multiplier method (age, income, dependents) as per Sarla Verma vs. DTC.
+- **Scenario 3 (Hit and Run)**: Victim injured by an unidentified vehicle.
+  - *Outcome*: Solatium Fund scheme provides fixed compensation (₹2,00,000 for death, ₹50,000 for grievous hurt).
+
+### **Category 2: Family & Matrimonial Laws**
+- **Scenario 4 (Divorce - Cruelty)**: Wife filed for divorce under Section 13(1)(ia) of the Hindu Marriage Act, citing persistent mental and physical cruelty by the husband and in-laws.
+  - *Outcome*: Decree of divorce usually granted if cruelty is proven via medical reports or witness testimony. Alimony (25% of husband's net salary) is common.
+- **Scenario 5 (Maintenance)**: Wife and minor child filed for maintenance under Section 125 CrPC. Husband is a software engineer earning ₹1.5L/month.
+  - *Outcome*: Court typically orders ₹30,000 - ₹45,000 per month as maintenance.
+
+### **Category 3: Criminal Law (BNS/IPC)**
+- **Scenario 6 (Theft)**: Accused caught shoplifting items worth ₹2,000. First-time offender.
+  - *Outcome*: Section 379 IPC (BNS 303). Likely fine or short imprisonment, but probation is possible under the Probation of Offenders Act.
+- **Scenario 7 (Cheque Bounce)**: Complainant filed a case under Section 138 of the Negotiable Instruments Act after a cheque for ₹5L was dishonoured due to "insufficient funds".
+  - *Outcome*: If the legal notice was served within 30 days and payment not made, the court typically orders the accused to pay double the cheque amount as fine or face up to 2 years imprisonment.
+
+### **Category 4: Labor & Employment**
+- **Scenario 8 (Unfair Dismissal)**: Employee terminated without notice or domestic inquiry after 5 years of service.
+  - *Outcome*: Industrial Tribunal may order reinstatement with back wages or lump-sum compensation (usually 1-2 years' salary).
+
+### **Category 5: Property & Tenancy**
+- **Scenario 9 (Eviction)**: Landlord seeks eviction of a tenant who hasn't paid rent for 12 months.
+  - *Outcome*: Under the Rent Control Act, non-payment is a valid ground for eviction. Court usually grants the tenant 2-3 months to vacate after the decree.

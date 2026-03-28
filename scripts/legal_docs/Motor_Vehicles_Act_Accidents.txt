@@ -1,0 +1,20 @@
+The Motor Vehicles Act, 1988 is the primary legislation regulating road transport in India.
+
+Key Sections for Accidents:
+- Section 134: Duty of driver in case of accident and injury to a person.
+- Section 161: Compensation in case of hit and run motor accidents.
+- Section 166: Application for compensation to the Motor Accident Claims Tribunal (MACT).
+- Section 184: Punishment for dangerous driving.
+- Section 185: Punishment for driving by a drunken person or by a person under the influence of drugs.
+
+Related IPC/BNS Sections:
+- IPC Section 279 (BNS Section 281): Rash driving or riding on a public way.
+- IPC Section 304A (BNS Section 106): Causing death by negligence.
+- IPC Section 337 (BNS Section 125A): Causing hurt by act endangering life or personal safety of others.
+- IPC Section 338 (BNS Section 125B): Causing grievous hurt by act endangering life or personal safety of others.
+
+Procedure in case of accident:
+1. File an FIR (First Information Report) at the nearest police station.
+2. Inform the insurance company.
+3. If there is injury or death, a claim can be filed in the Motor Accident Claims Tribunal (MACT).
+4. Compensation is determined based on age, income, and extent of injury/loss.

@@ -1,0 +1,30 @@
+The Hindu Marriage Act, 1955 is an Act of the Parliament of India enacted in 1955. It applies to Hindus, Jains, Sikhs, and Buddhists.
+
+Structure:
+- Sections: 30
+- Chapters: 6
+
+Key Provisions:
+- Section 5: Conditions for a Hindu Marriage (Monogamy, Sound mind, Age, Sapinda relationship).
+- Section 9: Restitution of conjugal rights.
+- Section 10: Judicial separation.
+- Section 11: Void marriages.
+- Section 12: Voidable marriages.
+- Section 13: Divorce (Grounds like Adultery, Cruelty, Desertion, Conversion, Insanity, Leprosy, Venereal disease, Renunciation of world, Presumption of death).
+- Section 13B: Divorce by mutual consent.
+- Section 24: Maintenance pendente lite (Maintenance during the pendency of the suit).
+- Section 25: Permanent alimony and maintenance.
+- Section 26: Custody of children.
+
+Grounds for Divorce (Section 13):
+1. Adultery
+2. Cruelty
+3. Desertion (at least 2 years)
+4. Conversion to another religion
+5. Incurably of unsound mind
+6. Leprosy (virulent and incurable)
+7. Venereal disease (communicable form)
+8. Renunciation of the world (sanyas)
+9. Presumed dead (7 years absence)
+10. Failure to resume cohabitation after decree of judicial separation (1 year)
+11. Failure to comply with decree of restitution of conjugal rights (1 year)

@@ -1,0 +1,27 @@
+The Code of Criminal Procedure, 1973 (CrPC) is the main legislation on procedure for administration of substantive criminal law in India. It was enacted in 1973 and came into force on 1 April 1974.
+
+Structure:
+- Chapters: 37
+- Sections: 484
+- Schedules: 2
+
+Key Provisions:
+- Investigation of Crime: Procedures for police to investigate.
+- Arrest: Rights of the arrested person.
+- Bail: Provisions for bail and bonds (Section 436-450).
+- Trials: Procedures for different types of trials (Sessions trial, warrant cases, summons cases).
+- Maintenance of wives, children, and parents: Section 125.
+- FIR (First Information Report): Section 154.
+- Anticipatory Bail: Section 438.
+- Public Nuisance: Section 133.
+
+Key Sections:
+- Section 41: When police may arrest without warrant.
+- Section 125: Order for maintenance of wives, children and parents.
+- Section 154: Information in cognizable cases (FIR).
+- Section 161: Examination of witnesses by police.
+- Section 164: Recording of confessions and statements.
+- Section 167: Procedure when investigation cannot be completed in twenty-four hours (Remand).
+- Section 437: When bail may be taken in case of non-bailable offence.
+- Section 438: Direction for grant of bail to person apprehending arrest (Anticipatory Bail).
+- Section 439: Special powers of High Court or Court of Session regarding bail.

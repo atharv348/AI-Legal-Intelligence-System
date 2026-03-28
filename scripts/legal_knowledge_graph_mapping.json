@@ -1,0 +1,60 @@
+{
+  "mappings": [
+    {
+      "source_law": "BNS 2023",
+      "source_section": "103",
+      "target_law": "IPC 1860",
+      "target_section": "302",
+      "relationship": "REPLACES",
+      "description": "Punishment for Murder"
+    },
+    {
+      "source_law": "BNS 2023",
+      "source_section": "104",
+      "target_law": "IPC 1860",
+      "target_section": "304A",
+      "relationship": "REPLACES",
+      "description": "Causing death by negligence"
+    },
+    {
+      "source_law": "BNS 2023",
+      "source_section": "101",
+      "target_law": "IPC 1860",
+      "target_section": "300",
+      "relationship": "REPLACES",
+      "description": "Culpable homicide not amounting to murder"
+    },
+    {
+      "source_law": "BNSS 2023",
+      "source_section": "154",
+      "target_law": "CrPC 1973",
+      "target_section": "154",
+      "relationship": "REPLACES",
+      "description": "Information in cognizable cases (FIR)"
+    },
+    {
+      "source_law": "BNSS 2023",
+      "source_section": "438",
+      "target_law": "CrPC 1973",
+      "target_section": "438",
+      "relationship": "REPLACES",
+      "description": "Anticipatory Bail"
+    },
+    {
+      "source_law": "BSA 2023",
+      "source_section": "1",
+      "target_law": "IEA 1872",
+      "target_section": "1",
+      "relationship": "REPLACES",
+      "description": "Short title, application and commencement"
+    },
+    {
+      "source_law": "BSA 2023",
+      "source_section": "2",
+      "target_law": "IEA 1872",
+      "target_section": "3",
+      "relationship": "REPLACES",
+      "description": "Definitions"
+    }
+  ]
+}
