@@ -14,9 +14,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY . .
 
-# Create the users_db.xlsx if it doesn't exist to avoid startup errors
-RUN touch users_db.xlsx
-
 # Set dynamic port for Render
 ENV PORT=8000
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $PORT"]
