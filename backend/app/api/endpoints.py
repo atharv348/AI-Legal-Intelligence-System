@@ -17,7 +17,6 @@ from app.core.config import settings
 from app.core.excel_db import get_user_by_email, add_user, init_db, update_user
 
 router = APIRouter()
-init_db()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/v1/login")
 
