@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pydantic
+pydantic[email]
 pydantic-settings
 python-dotenv
 langchain
@@ -27,8 +27,8 @@ langsmith
 duckduckgo-search
 pytesseract
 Pillow
-python-multipart
 python-jose[cryptography]
 bcrypt==4.0.1
 pandas
 openpyxl
+email-validator
