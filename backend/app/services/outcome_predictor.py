@@ -1,5 +1,3 @@
-from transformers import AutoTokenizer, AutoModel
-import torch
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from app.core.config import settings
