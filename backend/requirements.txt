@@ -18,6 +18,7 @@ pytesseract
 Pillow
 python-jose[cryptography]
 passlib[bcrypt]
+bcrypt==3.2.0
 pandas
 openpyxl
 email-validator
