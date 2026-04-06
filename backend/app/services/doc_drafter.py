@@ -3,9 +3,16 @@ from app.core.config import settings
 
 class MultilingualDocDrafter:
     def __init__(self):
-        self.model = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=settings.GROQ_API_KEY)
+        self.api_key = settings.GROQ_API_KEY
+        if self.api_key:
+            self.model = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=self.api_key)
+        else:
+            self.model = None
     
     def generate_draft(self, description: str, doc_type: str, language: str = "en"):
+        if not self.model:
+            return "Document drafting is unavailable because the GROQ_API_KEY is missing. Please add it to the environment variables."
+            
         print(f"Generating draft for type: {doc_type}, language: {language}")
         templates = {
             "FIR": "Draft a formal First Information Report (FIR) to be filed at a Police Station in India. Include sections for: Police Station details, Informant info, Date/Time/Place of Occurrence, Details of incident, Sections of IPC/BNS if applicable, and Prayer for action.",

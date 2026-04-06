@@ -7,7 +7,12 @@ from app.core.config import settings
 
 class RightsChatbot:
     def __init__(self, search_engine: LegalSearchEngine):
-        self.llm = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=settings.GROQ_API_KEY)
+        self.api_key = settings.GROQ_API_KEY
+        if self.api_key:
+            self.llm = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=self.api_key)
+        else:
+            self.llm = None
+            
         self.search_engine = search_engine
         
         # Define the conversational legal assistant prompt
@@ -46,6 +51,9 @@ class RightsChatbot:
         self.prompt = ChatPromptTemplate.from_template(template)
 
     def get_response(self, question: str, language: str = "en"):
+        if not self.llm:
+            return "I am currently in 'Offline' mode because the GROQ_API_KEY is missing. Please add it to enable my AI capabilities."
+            
         # Use the search engine's search logic to benefit from web search fallback
         search_result = self.search_engine.search(question)
         context_text = "\n\n---\n\n".join([src['content'] for src in search_result['sources']])

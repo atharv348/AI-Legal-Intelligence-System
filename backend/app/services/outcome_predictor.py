@@ -8,7 +8,11 @@ import json
 class CaseOutcomePredictor:
     def __init__(self, search_engine: LegalSearchEngine):
         self.search_engine = search_engine
-        self.llm = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=settings.GROQ_API_KEY)
+        self.api_key = settings.GROQ_API_KEY
+        if self.api_key:
+            self.llm = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=self.api_key)
+        else:
+            self.llm = None
         
         # Lazy loading for BERT to save startup time and memory
         self._tokenizer = None
@@ -72,6 +76,15 @@ class CaseOutcomePredictor:
         return outputs.last_hidden_state[:, 0, :].numpy()
     
     def predict(self, case_facts: str):
+        if not self.llm:
+            return {
+                "win_probability": 0.0,
+                "judgement_type": "Service Unavailable",
+                "settlement_range": "N/A",
+                "reasoning": "Case Prediction is disabled because the GROQ_API_KEY is missing.",
+                "key_risks": ["System configuration incomplete"]
+            }
+            
         # 1. Retrieve similar precedents using the search engine
         search_results = self.search_engine.search(case_facts, top_k=5)
         context_text = "\n\n---\n\n".join([res['content'] for res in search_results['sources']])
