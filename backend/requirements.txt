@@ -13,7 +13,7 @@ httpx
 jinja2
 sentry-sdk
 langsmith
-duckduckgo-search
+ddgs
 pytesseract
 Pillow
 python-jose[cryptography]
