@@ -8,9 +8,13 @@ function getApiBaseUrl(): string {
 
   // Use current host in browser to avoid localhost-only breakage when opened via LAN IP.
   if (typeof window !== "undefined") {
-    // If we're on localhost, explicitly use 127.0.0.1 to avoid IPv6 issues
-    const host = window.location.hostname === 'localhost' ? '127.0.0.1' : window.location.hostname;
-    return `http://${host}:8000/api/v1`;
+    // If we're on localhost or 127.0.0.1, use that explicitly
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return `http://127.0.0.1:8000/api/v1`;
+    }
+    // If we're in production but VITE_API_BASE_URL isn't set, this might fail,
+    // so we warn the developer in the console.
+    console.warn("[useApi] VITE_API_BASE_URL is not set. API calls might fail in production.");
   }
 
   return "http://127.0.0.1:8000/api/v1";
