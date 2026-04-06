@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm ivory/cream base — evokes courtroom parchment & legal documents */
+    --background: 40 30% 96%;
+    --foreground: 220 30% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Deep maroon — judicial robes, authority, Indian legal tradition */
+    --primary: 350 55% 38%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 220 25% 25%;
+
+    --muted: 40 15% 90%;
+    --muted-foreground: 220 12% 50%;
+
+    /* Warm brass/bronze accent — scales of justice, gavels */
+    --accent: 32 60% 45%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 87%;
+    --ring: 350 55% 38%;
+
+    --radius: 0.75rem;
+
+    /* Semantic palette */
+    --gold: 32 60% 45%;
+    --gold-light: 35 55% 60%;
+    --gold-dark: 30 55% 32%;
+    --navy: 220 35% 22%;
+    --navy-light: 220 25% 35%;
+    --navy-lighter: 220 20% 45%;
+    --success: 152 50% 38%;
+    --warning: 38 85% 48%;
+    --info: 210 65% 45%;
+
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 220 25% 25%;
+    --sidebar-primary: 350 55% 38%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 40 15% 92%;
+    --sidebar-accent-foreground: 220 25% 25%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 350 55% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(350 55% 38%), hsl(350 45% 48%));
+  }
+
+  .gradient-gold-subtle {
+    background: linear-gradient(135deg, hsl(350 55% 38% / 0.08), hsl(32 60% 45% / 0.04));
+  }
+
+  .gradient-navy {
+    background: linear-gradient(180deg, hsl(40 30% 96%), hsl(40 20% 92%));
+  }
+
+  .gradient-radial {
+    background: radial-gradient(ellipse at 30% 0%, hsl(350 55% 38% / 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 100%, hsl(32 60% 45% / 0.03) 0%, transparent 50%);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(350 55% 38%), hsl(350 45% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: hsl(40 25% 99% / 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(40 15% 85% / 0.8);
+    box-shadow: 0 1px 3px hsl(220 30% 15% / 0.04);
+  }
+
+  .glass-card-hover {
+    background: hsl(40 25% 99% / 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(40 15% 85% / 0.8);
+    box-shadow: 0 1px 3px hsl(220 30% 15% / 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: hsl(40 25% 100%);
+    border-color: hsl(350 55% 38% / 0.25);
+    box-shadow: 0 4px 20px hsl(350 55% 38% / 0.08), 0 1px 3px hsl(220 30% 15% / 0.04);
+    transform: translateY(-2px);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(350 55% 38% / 0.1), 0 0 60px hsl(350 55% 38% / 0.03);
+  }
+
+  .glow-gold-subtle {
+    box-shadow: 0 2px 12px hsl(350 55% 38% / 0.06);
+  }
+
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      hsl(40 30% 96% / 0.4) 45%,
+      hsl(40 30% 96% / 0.6) 50%,
+      hsl(40 30% 96% / 0.4) 55%,
+      transparent 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 6s ease-in-out infinite;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(hsl(220 20% 75% / 0.25) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes shine {
+  0% { transform: rotate(30deg) translateX(-100%); }
+  100% { transform: rotate(30deg) translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(40 15% 80%);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(350 55% 38% / 0.4);
+}
+
+/* Selection */
+::selection {
+  background: hsl(350 55% 38% / 0.2);
+  color: hsl(220 30% 15%);
+}

@@ -10,33 +10,36 @@ class LegalSearchEngine:
         self.web_search = DuckDuckGoSearchRun()
 
         template = """
-        You are an AI legal expert for the Indian legal system.
-        Your goal is to provide a professional and detailed response to the user's legal question.
+        You are a friendly, knowledgeable legal assistant. Answer the user's question clearly and conversationally, like a trusted friend.
+
+        RULES:
+        - Open directly with the answer.
+        - Use plain language and explain any legal terms.
+        - No robotic headers or labels.
+        - Naturally weave in any case examples or next steps.
 
         Use the following web search results as context:
         {context}
 
         Question: {question}
 
-        Provide a comprehensive legal answer including:
-        1. Direct answer to the question
-        2. Relevant laws and sections
-        3. Practical advice
-        4. Important disclaimers
+        Respond as Nyaya AI:
         """
         self.prompt = ChatPromptTemplate.from_template(template)
         self.chain = self.prompt | self.llm
 
-    def search(self, query: str) -> dict:
+    def search(self, query: str, top_k: int = 5, **kwargs) -> dict:
         try:
             web_results = self.web_search.run(query + " India law")
+            # DuckDuckGo tool doesn't support top_k directly in run(), 
+            # but we accept it to maintain compatibility with other services.
             response = self.chain.invoke({
                 "context": web_results,
                 "question": query
             })
             return {
                 "answer": response.content,
-                "sources": ["DuckDuckGo Web Search"],
+                "sources": [{"id": "web-1", "title": "DuckDuckGo Web Search", "content": web_results}],
                 "query": query
             }
         except Exception as e:
@@ -56,7 +59,7 @@ class LegalSearchEngine:
             })
             return {
                 "answer": response.content,
-                "sources": ["DuckDuckGo Web Search"],
+                "sources": [{"id": "web-1", "title": "DuckDuckGo Web Search", "content": web_results}],
                 "query": query
             }
         except Exception as e:

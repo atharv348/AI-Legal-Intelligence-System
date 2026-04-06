@@ -76,9 +76,15 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
             raise credentials_exception
         token_data = TokenData(email=email)
     except JWTError:
+        print("[Auth] JWT Decode Error")
         raise credentials_exception
+    except Exception as e:
+        print(f"[Auth] Unexpected Error: {e}")
+        raise credentials_exception
+
     user = get_user_by_email(token_data.email)
     if user is None:
+        print(f"[Auth] User not found in DB: {token_data.email}")
         raise credentials_exception
     
     # Handle potentially missing fields from old excel rows and ensure types

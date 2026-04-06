@@ -1,68 +1,68 @@
-# AI Legal Intelligence System (ALIS)
+# AI Legal Intelligence System (ALIS) 🏛️🤖
 
-## Problem Statement
-India's legal system faces a massive backlog of **50 million pending court cases**. Approximately **70% of citizens cannot afford a lawyer**, and undertrial prisoners often wait over **3 years** for their first hearing. Legal professionals spend countless hours manually searching through **200 years of case law** across **22 languages** to find relevant precedents. Furthermore, legal documents are often filled with dense legalese, making them inaccessible to the very people they concern.
+ALIS is a cutting-edge, end-to-end AI platform designed to revolutionize the Indian legal system. It provides citizens, lawyers, and judicial officers with intelligent tools for legal research, case analysis, and document drafting.
 
-## Solution — AI Legal Intelligence System
-ALIS is an end-to-end AI platform designed to transform the Indian legal landscape through five core capabilities:
+## 🌟 Key Features
 
-1.  **Semantic RAG Search Engine**: High-speed retrieval over **15 million Indian court judgements**. Lawyers and citizens can type questions in plain English or Hindi and receive relevant precedents in seconds.
-2.  **Case Outcome Predictor**: A predictive model trained on **500,000 labelled judgements**. By analyzing case facts using **Legal-BERT embeddings and XGBoost**, it provides win probabilities and likely judgement types.
-3.  **Multilingual Legal Document Drafter**: An LLM-powered tool that generates ready-to-file bail applications, RTI requests, or consumer complaints in correct legal formats based on descriptions provided in **Marathi, Hindi, or English**.
-4.  **Citizen Rights Chatbot**: A WhatsApp-integrated assistant available in **10 Indian languages**. It is strictly grounded in **Retrieval-Augmented Generation (RAG)** to ensure accuracy and prevent hallucinations.
-5.  **Court Docket Intelligence Dashboard**: A specialized tool for administrators to flag long-pending cases, detect **adjournment abuse patterns**, and recommend triage priorities for faster justice delivery.
+### 1. **Nyaya Analytics Dashboard**
+- **Real-time Metrics**: Visualization of 44M+ pending cases across Indian courts.
+- **AI Triage**: Automatically prioritizes cases based on duration and petitioner vulnerability.
+- **Adjournment Abuse Detection**: Identifies patterns of procedural manipulation using lawyer-wise analytics.
 
-## Core Stack
-The system is built on a modern, high-performance AI and web stack:
--   **AI & NLP**: Llama 3.1 (via Groq), Legal-BERT, IndicBERT, LangChain, LlamaIndex.
--   **Databases**: ChromaDB (Vector Store), Neo4j (Knowledge Graph), Excel (User Data Persistence).
--   **Backend**: FastAPI (Python), JWT Authentication, Web Speech API (Voice-to-Text).
--   **Frontend**: Next.js 16.2.1 (Turbopack), Tailwind CSS, Lucide Icons.
--   **Deployment & Infrastructure**: Vercel (Frontend), Supabase, Gemini API.
+### 2. **Nyaya Citizen Chatbot**
+- **Multilingual Support**: Assistance in English, Hindi, Marathi, and Tamil.
+- **Voice-to-Text**: Hands-free legal queries using integrated speech recognition.
+- **Document OCR**: Upload legal notices or FIRs for instant AI explanation.
 
-## Getting Started
+### 3. **Legal Knowledge Engine**
+- **Semantic Search**: Deep search across 15M+ records, including Supreme Court judgments and the new BNS 2023.
+- **Source Citations**: Every AI response is backed by primary legal sources.
 
-### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- Groq API Key (for LLM services)
+### 4. **Case Outcome Predictor**
+- **Legal-BERT Analysis**: Win probability prediction trained on 500k+ historical judgments.
+- **Risk Assessment**: Identifies procedural and evidentiary risks.
 
-### Installation
+### 5. **Multilingual Doc Drafter**
+- **Ready-to-File Docs**: Generates FIRs, RTIs, and Legal Notices in 6+ languages.
 
-#### Backend
-1. Navigate to the `backend` directory.
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Set up your `.env` file with `GROQ_API_KEY`.
-4. Run the server: `uvicorn app.main:app --reload`.
+## 🛠️ Tech Stack
 
-#### Frontend
-1. Navigate to the `frontend` directory.
-2. Install dependencies: `npm install`.
-3. Run the development server: `npm run dev`.
+- **Frontend**: Vite + React + TypeScript + Tailwind CSS + Framer Motion
+- **Backend**: FastAPI (Python) + Uvicorn
+- **AI/ML**: Legal-BERT, Sentence Transformers, Tesseract (OCR)
+- **Database**: Excel-based rapid prototyping (User DB) + Vector DB (Legal Knowledge)
 
-## Deployment
+## 🚀 Deployment
 
 ### Backend (Render)
-1. Sign up on [Render.com](https://render.com).
-2. Create a new **Web Service**.
-3. Connect this GitHub repository.
-4. Select **Docker** as the Runtime.
-5. Set the **Root Directory** to `backend`.
-6. Add the following **Environment Variables**:
-   - `GROQ_API_KEY`: Your Groq API key.
-   - `SECRET_KEY`: A secure random string for JWT.
-   - `ALGORITHM`: `HS256`.
-   - `ACCESS_TOKEN_EXPIRE_MINUTES`: `60`.
-7. Render will deploy your API at `https://your-app.onrender.com`.
+1. Set up a Web Service on [Render](https://render.com).
+2. Use the provided `Dockerfile` or build command: `pip install -r requirements.txt`.
+3. Start command: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
 
 ### Frontend (Vercel)
-1. Sign up on [Vercel.com](https://vercel.com).
-2. Create a new **Project** and connect this repository.
-3. Set the **Root Directory** to `frontend`.
-4. Add the following **Environment Variable**:
-   - `NEXT_PUBLIC_API_BASE_URL`: `https://your-app.onrender.com/api/v1` (The URL of your Render backend).
-5. Vercel will deploy your app with a public URL.
+1. Connect your GitHub repo to [Vercel](https://vercel.com).
+2. Set Environment Variable: `VITE_API_BASE_URL` to your Render backend URL.
+3. Build Command: `npm run build`.
+4. Output Directory: `dist`.
 
-## Note on Database
-This demo uses **Excel (`users_db.xlsx`)** for user data. On Render's free tier, the file system is ephemeral, meaning data resets when the service restarts. For production use, consider migrating to **PostgreSQL** or **Supabase**.
+## 📦 Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/alis-legal-ai.git
+
+# Install Backend Dependencies
+cd backend
+pip install -r requirements.txt
+
+# Install Frontend Dependencies
+cd ../frontend
+npm install
+
+# Run the project
+cd ..
+npm run dev
+```
+
+## 📜 License
+MIT License - 2024 ALIS Team

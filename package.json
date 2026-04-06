@@ -1,0 +1,27 @@
+{
+  "name": "ai-legal-intelligence-system",
+  "version": "1.0.0",
+  "description": "India's legal system faces a massive backlog of **50 million pending court cases**. Approximately **70% of citizens cannot afford a lawyer**, and undertrial prisoners often wait over **3 years** for their first hearing. Legal professionals spend countless hours manually searching through **200 years of case law** across **22 languages** to find relevant precedents. Furthermore, legal documents are often filled with dense legalese, making them inaccessible to the very people they concern.",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --port 8000 --host 127.0.0.1",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atharv348/AI-Legal-Intelligence-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/atharv348/AI-Legal-Intelligence-System/issues"
+  },
+  "homepage": "https://github.com/atharv348/AI-Legal-Intelligence-System#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

@@ -1,17 +1,19 @@
 import { useState, useCallback } from "react";
 
 function getApiBaseUrl(): string {
-  const envBase = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const envBase = import.meta.env.VITE_API_BASE_URL;
   if (envBase && envBase.trim()) {
     return envBase;
   }
 
   // Use current host in browser to avoid localhost-only breakage when opened via LAN IP.
   if (typeof window !== "undefined") {
-    return `http://${window.location.hostname}:8000/api/v1`;
+    // If we're on localhost, explicitly use 127.0.0.1 to avoid IPv6 issues
+    const host = window.location.hostname === 'localhost' ? '127.0.0.1' : window.location.hostname;
+    return `http://${host}:8000/api/v1`;
   }
 
-  return "http://localhost:8000/api/v1";
+  return "http://127.0.0.1:8000/api/v1";
 }
 
 export function useApi() {
@@ -22,28 +24,43 @@ export function useApi() {
     setLoading(true);
     setError(null);
     try {
-      // If it's a FormData request, don't set Content-Type header manually
+      // If it's a FormData or URLSearchParams request, don't set Content-Type header manually
       const isFormData = options.body instanceof FormData;
+      const isUrlSearchParams = options.body instanceof URLSearchParams;
       
       const headers: Record<string, string> = {
         ...((options.headers as Record<string, string>) || {}),
       };
 
-      if (!isFormData && !headers["Content-Type"]) {
+      // Add Authorization header if token exists
+      const token = localStorage.getItem("alis_token");
+      if (token && !headers["Authorization"]) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+
+      if (!isFormData && !isUrlSearchParams && !headers["Content-Type"]) {
         headers["Content-Type"] = "application/json";
       }
 
-      const url = `${getApiBaseUrl()}${endpoint}`;
+      const baseUrl = getApiBaseUrl().replace(/\/$/, "");
+      const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+      const url = `${baseUrl}${cleanEndpoint}`;
       console.log(`[useApi] Fetching: ${url}`, {
         method: options.method || 'GET',
         headers: headers,
         hasBody: !!options.body
       });
       
-      const response = await fetch(url, {
+      const fetchOptions: RequestInit = {
         ...options,
-        headers,
-      });
+      };
+      
+      // Only set headers if we have something or we need JSON
+      if (Object.keys(headers).length > 0) {
+        fetchOptions.headers = headers;
+      }
+
+      const response = await fetch(url, fetchOptions);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: `HTTP error! status: ${response.status}` }));

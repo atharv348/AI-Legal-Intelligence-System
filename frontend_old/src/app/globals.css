@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --judge-grey: #5D5346;
+  --legal-navy: #1E293B;
+  --legal-blue: #2563EB;
+  --legal-purple: #7C3AED;
+}
+
+.dark {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-judge-grey: var(--judge-grey);
+  --color-legal-navy: var(--legal-navy);
+  --color-legal-blue: var(--legal-blue);
+  --color-legal-purple: var(--legal-purple);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
