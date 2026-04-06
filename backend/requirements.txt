@@ -23,3 +23,5 @@ openpyxl
 email-validator
 celery
 redis
+neo4j
+langchain-neo4j
