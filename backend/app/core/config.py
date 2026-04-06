@@ -6,9 +6,9 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     
     # API Keys
-    GROQ_API_KEY: str
-    SUPABASE_URL: str
-    SUPABASE_KEY: str
+    GROQ_API_KEY: Optional[str] = None
+    SUPABASE_URL: Optional[str] = None
+    SUPABASE_KEY: Optional[str] = None
     
     # Database
     DATABASE_URL: Optional[str] = None
